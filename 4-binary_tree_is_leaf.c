@@ -3,9 +3,8 @@
 /**
  * binary_tree_is_leaf - Checks if a node is a leaf of a binary tree.
  *
- * This function determines whether the given node is a leaf node (a node with no children) in a binary tree.
- * If the node is NULL or has either a left or right child, it is not a leaf, and the function returns 0.
- * Otherwise, if the node has no children (i.e., it is a leaf), the function returns 1.
+ * it determines whether the given node is a leaf node in a binary tree.
+ * If the node is NULL or has either a left or right child.
  *
  * @node: A pointer to the node to check.
  *

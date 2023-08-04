@@ -3,8 +3,8 @@
 /**
  * binary_tree_delete - Deletes a binary tree.
  *
- * This function recursively deletes an entire binary tree starting from the given root node.
- * The function traverses the tree in post-order (left, right, root) and frees each node.
+ * This func recursively deletes an entire binary tree starting from the given root node.
+ * The func traverses the tree in post-order (left, right, root) and frees each node.
  *
  * @tree: A pointer to the root node of the tree to delete.
  */
