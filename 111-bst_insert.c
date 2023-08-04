@@ -2,47 +2,50 @@
 
 /**
  * bst_insert - Inserts a value in a Binary Search Tree.
- * @tree: A double pointer to the root node of the BST to insert the value.
+ * @root: A double pointer to the root node of the BST to insert the value.
  * @value: The value to store in the node to be inserted.
  *
  * Return: A pointer to the created node, or NULL on failure.
  */
-bst_t *bst_insert(bst_t **tree, int value)
+bst_t *bst_insert(bst_t **root, int value)
 {
-	bst_t *curr, *new;
+    bst_t *current, *new_node;
 
-	if (tree != NULL)
-	{
-		curr = *tree;
+    if (root != NULL)
+    {
+        current = *root;
 
-		if (curr == NULL)
-		{
-			new = binary_tree_node(curr, value);
-			if (new == NULL)
-				return (NULL);
-			return (*tree = new);
-		}
+        if (current == NULL)
+        {
+            new_node = binary_tree_node(current, value);
+            if (new_node == NULL)
+                return (NULL);
+            return (*root = new_node);
+        }
 
-		if (value < curr->n) /* insert in left subtree */
-		{
-			if (curr->left != NULL)
-				return (bst_insert(&curr->left, value));
+        if (value < current->n) /* insert in left subtree */
+        {
+            if (current->left != NULL)
+                return (bst_insert(&current->left, value));
 
-			new = binary_tree_node(curr, value);
-			if (new == NULL)
-				return (NULL);
-			return (curr->left = new);
-		}
-		if (value > curr->n) /* insert in right subtree */
-		{
-			if (curr->right != NULL)
-				return (bst_insert(&curr->right, value));
+            new_node = binary_tree_node(current, value);
+            if (new_node == NULL)
+                return (NULL);
+            return (current->left = new_node);
+        }
 
-			new = binary_tree_node(curr, value);
-			if (new == NULL)
-				return (NULL);
-			return (curr->right = new);
-		}
-	}
-	return (NULL);
+        if (value > current->n) /* insert in right subtree */
+        {
+            if (current->right != NULL)
+                return (bst_insert(&current->right, value));
+
+            new_node = binary_tree_node(current, value);
+            if (new_node == NULL)
+                return (NULL);
+            return (current->right = new_node);
+        }
+    }
+
+    return (NULL);
 }
+
